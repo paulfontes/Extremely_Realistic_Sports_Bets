@@ -62,15 +62,48 @@ function betTeam1() {
             // console.log(team2Skill)
         }
 
-        if(team1Skill > team2Skill){
-            bank += 25
-        } else {
-            bank -= 25
-        }
-        // return team1Skill && team2Skill
-        console.log("⚽Team 1", team1Skill)
-        console.log("🏐Team 2", team2Skill)
-        console.log("🏦", bank)
     })
+    if(team1Skill > team2Skill){
+        bank += 25,
+        window.alert("You won money")
+    } else {
+        bank -= 25,
+        window.alert("You lost money")
+    }
+    // return team1Skill && team2Skill
+    console.log("⚽Team 1", team1Skill)
+    console.log("🏐Team 2", team2Skill)
+    console.log("🏦", bank)
+
+}
+
+function betTeam2() {
+    let team1Skill = 0 
+    let team2Skill = 0
+    let bank = 0 
+
+    players.forEach((player) => {
+        
+        if(player.teamNumber === 2) {
+            team2Skill += player.skill
+            // console.log(team1Skill)
+        }else {
+            team2Skill += player.skill
+            // console.log(team2Skill)
+        }
+
+    })
+    if(team2Skill > team1Skill){
+        bank += 25,
+        window.alert("You won money")
+    } else {
+        bank -= 25,
+        window.alert("You lost money")
+    }
+    // return team1Skill && team2Skill
+    console.log("⚽Team 1", team1Skill)
+    console.log("🏐Team 2", team2Skill)
+    console.log("🏦", bank)
+
 }
 
