@@ -47,11 +47,19 @@ function drawTeam2() {
 )
 }
 
-function betTeam1() {
+// function placeBet(bid, teamNumber){
+
+// }
+
+function betTeam1(bid) {
     let team1Skill = 0 
     let team2Skill = 0
-    let bank = 0 
 
+    if(bank < bid){
+        
+        return
+    }
+    
     players.forEach((player) => {
         
         if(player.teamNumber === 1) {
@@ -61,26 +69,25 @@ function betTeam1() {
             team2Skill += player.skill
             // console.log(team2Skill)
         }
-
+        
     })
     if(team1Skill > team2Skill){
-        bank += 25,
+        bank += bid,
         window.alert("You won money")
     } else {
-        bank -= 25,
+        bank -= bid,
         window.alert("You lost money")
     }
     // return team1Skill && team2Skill
     console.log("⚽Team 1", team1Skill)
     console.log("🏐Team 2", team2Skill)
     console.log("🏦", bank)
-
+    drawBankTotal()
 }
 
 function betTeam2() {
     let team1Skill = 0 
     let team2Skill = 0
-    let bank = 0 
 
     players.forEach((player) => {
         
@@ -104,6 +111,12 @@ function betTeam2() {
     console.log("⚽Team 1", team1Skill)
     console.log("🏐Team 2", team2Skill)
     console.log("🏦", bank)
-
+    drawBankTotal()
 }
 
+function drawBankTotal() {
+    let bankContainer = document.getElementById("bank")
+    bankContainer.innerHTML = `<span>${bank}</span>`
+}
+
+drawBankTotal()
