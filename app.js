@@ -25,17 +25,17 @@ const players = [
     { teamNumber: 2, emoji: "🐅", skill: 100, name: "Tiger" },
 ];
 function draftPlayers() {
-    team1Container.innerHTML = ""
+    team1Container.innerHTML = ''
     team2Container.innerHTML = ''    
-    
+
     let draftTeamNumber = [1,2]
     players.forEach((player) => {
         let randomPosition = Math.round(Math.random() * 2)
         player.teamNumber = draftTeamNumber[randomPosition]
     })
     console.log('Drafting Teams')
-    drawTeam1()
     drawTeam2()
+    drawTeam1()
 }
 const team1Container = document.getElementById('team1')
 
